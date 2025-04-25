@@ -1,0 +1,17 @@
+uis_custom_blocks:
+  js:
+    js/build/blocks.js: { scope: footer }
+  css:
+    base:
+      js/build/style-frontend.css: {}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+    - gutenberg/gutenberg
+
+uis_custom_blocks_editor:
+  js:
+    js/build/editor.js: { scope: footer }
+  css:
+    theme:
+      js/build/style-editor.css: { media: screen }
