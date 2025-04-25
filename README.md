@@ -106,6 +106,7 @@ Styles can be customized by modifying the `/js/src/blocks/uis-card/style.scss` f
 
 - **Blocks not appearing**: Clear the Drupal cache and ensure the module is enabled
 - **Styling issues**: Check browser console for errors and ensure CSS is being loaded
+  **Also ensure no classes are being overidden by default drupal
 - **JavaScript errors**: Check browser console for errors and ensure all dependencies are installed
 - **Build failures**: Ensure Node.js and npm are up to date and all dependencies are installed
 
