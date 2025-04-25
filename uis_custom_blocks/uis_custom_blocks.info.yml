@@ -1,0 +1,7 @@
+name: 'UIS Custom Blocks'
+type: module
+description: 'Provides custom Gutenberg blocks using React.'
+core_version_requirement: ^10
+package: Custom
+dependencies:
+  - gutenberg:gutenberg
