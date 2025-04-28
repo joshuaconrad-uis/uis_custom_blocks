@@ -1,0 +1,31 @@
+/**
+ * Editor-specific styles for My Custom Block.
+ * 
+ * This SCSS file contains styles that only apply within the Gutenberg editor interface.
+ * It is imported in edit.js to style the editing experience, but not the frontend.
+ * 
+ * The styles here mirror style.scss but use editor-specific class names to avoid
+ * conflicts between editor and frontend styling.
+ * 
+ * Import path in edit.js would be:
+ * import './editor.scss';
+ * 
+ * Key styles:
+ * - Matches the frontend red background and padding
+ * - Centers content and sets white text color
+ * - Uses .editor-my-custom-block class namespace for editor context
+ */
+
+
+
+.editor-my-custom-block {
+    background-color: red;
+    padding: 20px;
+    display: block;
+    width: 100%;
+}
+
+.editor-my-custom-block .content{
+    text-align: center;
+    color: white;
+}

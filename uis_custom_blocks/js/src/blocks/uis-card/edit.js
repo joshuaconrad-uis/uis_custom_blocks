@@ -7,15 +7,28 @@ export default function Edit({ attributes, setAttributes }) {
   const { headerText, title, content, linkUrl } = attributes;
   const blockProps = useBlockProps();
 
+
+  /**
+   * Edit component for the UIS Card block.
+   * 
+   * @param {Object} props - Component properties
+   * @param {Object} props.attributes - Block attributes
+   * @param {string} props.attributes.headerText - Text displayed in the card header
+   * @param {string} props.attributes.title - Card title content
+   * @param {string} props.attributes.content - Main card content
+   * @param {string} props.attributes.linkUrl - URL to make the entire card clickable
+   * @param {Function} props.setAttributes - Function to update block attributes
+   * 
+   * @returns {JSX.Element} The editable card component in the block editor
+   */
+
+
+
+  
   return (
     <div className="editor-styles-uis-card">
     <div {...blockProps}
      className="advanced-card">
-      {/* <div className="advanced-card__header">
-        <div className="advanced-card__header-text">
-          {headerText}
-        </div>
-      </div> */}
       <div className="advanced-card__title-container">
         <RichText
           tagName="h2"

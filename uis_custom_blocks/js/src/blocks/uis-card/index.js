@@ -3,8 +3,6 @@ import { __ } from '@wordpress/i18n';
 import edit from './edit.js';
 import save from './save.js';
 
-console.log('Attempting to register block:', 'custom_gutenberg/UIScard');
-
 registerBlockType('uis-custom-blocks/uis-card', 
   
   {
@@ -32,5 +30,3 @@ registerBlockType('uis-custom-blocks/uis-card',
   edit,
   save,
 });
-
-console.log('Block registration complete for: custom-gutenberg/uis-card'); 

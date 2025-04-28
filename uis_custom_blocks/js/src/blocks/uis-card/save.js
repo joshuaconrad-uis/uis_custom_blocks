@@ -6,6 +6,22 @@ export default function Save({ attributes }) {
     className: 'advanced-card-wrapper'
   });
 
+
+  /**
+   * Save component for the UIS Card block.
+   *
+   * @param {Object} props - Component properties
+   * @param {Object} props.attributes - Block attributes
+   * @param {string} props.attributes.headerText - Text displayed in the card header
+   * @param {string} props.attributes.title - Card title content
+   * @param {string} props.attributes.content - Main card content
+   * @param {string} props.attributes.linkUrl - Optional URL to make the entire card clickable
+   * 
+   * @returns {JSX.Element} The rendered card component, optionally wrapped in a link
+   */
+
+
+  
   // Create the card content
   const cardContent = (
     <div className="advanced-card">
