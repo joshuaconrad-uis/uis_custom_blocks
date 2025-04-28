@@ -8,6 +8,7 @@
 /**
  * Implements hook_gutenberg_blocks().
  */
+ //Basic Card example, you need to add in all the attributes for a card line by line
 function uis_custom_blocks_gutenberg_blocks() {
   return [
     'uis-custom-blocks/my-custom-block' => [
@@ -39,6 +40,8 @@ function uis_custom_blocks_gutenberg_blocks() {
     ],
   ];
 }
+
+
 
 // Should never need to touch these
 /**
