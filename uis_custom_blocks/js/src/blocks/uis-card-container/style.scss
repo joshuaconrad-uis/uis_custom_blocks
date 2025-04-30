@@ -1,0 +1,27 @@
+.uis-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px 60px;
+    margin: 20px 125px;
+    align-items: stretch; 
+
+    // Target the cards inside the container
+    .wp-block-uis-custom-blocks-uis-card {
+      flex: 0 0 calc(33.333% - 10px);
+      max-width: 275px;
+      //min-height: 275px;
+      margin: 0; // Remove individual margins since we're using gap
+      max-height : 220px;
+      
+      @media (max-width: 900px) { 
+        flex: 0 0 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+      }
+      
+      @media (max-width: 600px) {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+  }

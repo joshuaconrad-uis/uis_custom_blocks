@@ -38,8 +38,15 @@ function uis_custom_blocks_gutenberg_blocks() {
       ],
       'category' => 'common',
     ],
+  
+  'uis-uis_custom_blocks/uis-card-container' => [
+  ]
+
   ];
 }
+
+
+
 
 
 

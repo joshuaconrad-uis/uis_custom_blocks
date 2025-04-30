@@ -29,6 +29,7 @@ registerBlockType('uis-custom-blocks/my-custom-block',
   
   {
   title: __('My Custom Block'),
+  icon: 'smiley',
   category: 'common',  // Make sure this matches the category in PHP
   attributes: {           //These are the attributes you need to define in the uis_custom_blocks.module file
     content: {

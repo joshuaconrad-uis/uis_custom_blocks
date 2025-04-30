@@ -1,4 +1,4 @@
-import { useBlockProps, RichText } from '@wordpress/block-editor';
+import { useBlockProps, RichTex, Button } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 
 
@@ -58,6 +58,12 @@ export default function Edit({ attributes, setAttributes }) {
         onChange={(content) => setAttributes({ content })}
         placeholder={__('Write your content here...')}
       />
+      <p>
+        Hi there
+      </p>
+
+      <Button></Button>
+
       </div>
 
     </div>
