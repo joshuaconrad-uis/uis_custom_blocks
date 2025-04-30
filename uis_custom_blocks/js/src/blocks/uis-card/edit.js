@@ -1,4 +1,4 @@
-import { useBlockProps, RichText, URLInputButton } from '@wordpress/block-editor';
+import { useBlockProps, RichText,  } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 
 import { TextControl } from '@wordpress/components';
@@ -24,7 +24,7 @@ export default function Edit({ attributes, setAttributes }) {
 
 
 
-  
+
   return (
     <div className="editor-styles-uis-card">
     <div {...blockProps}
@@ -53,7 +53,7 @@ export default function Edit({ attributes, setAttributes }) {
           label={__('Card Link URL')}
           value={linkUrl}
           onChange={(linkUrl) => setAttributes({ linkUrl })}
-          placeholder={__('https://example.com')}
+          placeholder={('https://example.com')}
         />
       </div>
     </div>

@@ -1,7 +1,6 @@
 import { useBlockProps, RichTex, Button } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 
-
 /**
  * 
  * 1. It receives props containing:

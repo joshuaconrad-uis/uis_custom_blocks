@@ -5,11 +5,14 @@
  * Contains uis_custom_blocks.module.
  */
 
+
+
 /**
  * Implements hook_gutenberg_blocks().
  */
  //Basic Card example, you need to add in all the attributes for a card line by line
-function uis_custom_blocks_gutenberg_blocks() {
+ // uis-custom-blocks always stays the same but after the slash you put the name of the card you are adding
+function uis_custom_blocks_gutenberg_blocks() {n 
   return [
     'uis-custom-blocks/my-custom-block' => [
       'attributes' => [
@@ -20,7 +23,7 @@ function uis_custom_blocks_gutenberg_blocks() {
       'category' => 'common',
     ],
 
-    // uis-custom-blocks always stays the same but after the slash you put the name of the card you are adding
+//uis-card block registration    
     'uis-custom-blocks/uis-card' => [
       "attributes" => [
         'headerText' => [
@@ -42,8 +45,39 @@ function uis_custom_blocks_gutenberg_blocks() {
   'uis-uis_custom_blocks/uis-card-container' => [
   ]
 
+
+//Registraion for uis-image-card block
+    'uis-custom-blocks/uis-image-card' => [
+      'attributes' => [
+        'linkUrl' => [
+          'type' => 'string',
+        ],
+        'imageUrl' => [
+          'type' => 'string',
+        ],
+        'title' => [
+          'type' => 'string',
+        ],
+      ],
+      'category' => 'common',
+    ],
+
+
+//ADD NEW BLOCKS HERE AS NEEDED
+
+
+
+
   ];
 }
+
+
+
+
+
+
+
+
 
 
 
