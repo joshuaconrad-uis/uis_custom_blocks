@@ -29,11 +29,6 @@ import { useBlockProps, RichText } from '@wordpress/block-editor';
 
 
 
-
-
-
-
-
 // This is the save component for the block
 /**
  * Save component for the My Custom Block.

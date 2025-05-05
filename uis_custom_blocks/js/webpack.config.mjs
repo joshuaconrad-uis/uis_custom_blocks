@@ -21,10 +21,6 @@ export default {
     path: `${process.cwd()}/build`,
     filename: '[name].js',
   },
-  // module: {
-  //   ...wpConfig.module,
-  //   //rules: updatedRules,
-  // },
   plugins: [
     ...wpConfig.plugins,
     new MiniCssExtractPlugin({
