@@ -1,0 +1,157 @@
+// Editor styles for the UIS Image Card block
+
+.editor-styles-wrapper {
+  .editor-styles-uis-image-card {
+    // Card container styles
+    .uis-image-card-container {
+      width: 275px;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      border-radius: 3px;
+      overflow: hidden;
+      position: relative;
+      background-color: #fff;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      
+      &:hover {
+        transform: scale(0.98);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+      }
+    }
+    
+    // Image wrapper styles
+    .uis-image-card-image-wrapper {
+      flex: 1;
+      min-height: 250px;
+      position: relative;
+      overflow: hidden;
+      background-color: #f0f0f0; // Light background to make button stand out
+      border: 2px dashed #ccc; // Dashed border to indicate dropzone
+      
+      // Upload button styling - ENHANCED FOR VISIBILITY
+      .uis-image-card-upload-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #0073aa;
+        color: white;
+        border: none;
+        padding: 12px 20px; 
+        border-radius: 4px;
+        width: 25px;
+        cursor: pointer;
+        font-size: 16px; // Larger font
+        font-weight: 600; // Bolder text
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); // Add shadow to button
+        display: flex;
+        align-items: center;
+        
+        &::before {
+          content: "\f317"; // WordPress dashicon for upload
+          font-family: dashicons;
+          margin-right: 8px;
+          font-size: 20px;
+        }
+        
+        &:hover {
+          background-color: #005a87;
+          transform: translate(-50%, -50%) scale(1.05); // Slight grow effect
+        }
+      }
+      
+      // Image preview container
+      .uis-image-card-image-preview {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        
+        // The actual image
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+          display: block;
+        }
+        
+        // Change image button
+        .uis-image-card-change-image-button {
+          position: absolute;
+          bottom: 8px;
+          right: 8px;
+          background-color: rgba(0, 0, 0, 0.7);
+          color: white;
+          border: none;
+          padding: 4px 8px;
+          border-radius: 4px;
+          font-size: 12px;
+          opacity: 0;
+          transition: opacity 0.2s ease;
+          
+          &:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+          }
+        }
+        
+        &:hover .uis-image-card-change-image-button {
+          opacity: 1;
+        }
+      }
+    }
+    
+    // Content area styles
+    .uis-image-card-content {  
+      // Title styling
+      .uis-image-card-title h3 {
+        margin: 0 0 12px 0;
+        text-align: center;
+        z-index: 7;
+        font-size: 18px;
+        line-height: 1.4;
+        font-weight: 600;
+        color: #000000;
+
+      }
+      
+      // Link input styling
+      .uis-image-card-link-input {
+        margin-top: 12px;
+        
+        label {
+          display: block;
+          margin-bottom: 4px;
+          font-size: 14px;
+          color: #555;
+        }
+        
+        input {
+          width: 100%;
+          padding: 8px;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          font-size: 14px;
+          
+          &:focus {
+            border-color: #0073aa;
+            outline: none;
+            box-shadow: 0 0 0 1px #0073aa;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Ensure the block UI elements don't overflow
+.block-editor-block-list__block[data-type="uis-custom-blocks/uis-image-card"] {
+  min-height: 400px;
+  width: 275px;
+}
+
+// Fix for when the block is selected
+.is-selected .editor-styles-uis-image-card .uis-image-card-container {
+  z-index: 1;
+}

@@ -2,8 +2,8 @@ import { registerBlockType } from '@wordpress/blocks';
 import { __ } from '@wordpress/i18n';
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
-registerBlockType('uis-custom-blocks/card-container', {
-  title: __('UIS Card Container'),
+registerBlockType('uis-custom-blocks/uis-card-container', {
+  title: __('UIS-Card-Container'),
   icon: 'grid-view',
   category: 'common',
   
