@@ -4,16 +4,17 @@
   justify-content: center;
   gap: 30px;
   margin: 20px auto;
-  padding: 10px;
   max-width: 1200px; // Adjust based on your design
 
   // Target the cards inside the container
   .wp-block-uis-custom-blocks-uis-image-card {
-    flex: 0 0 275px; // Fixed width of 275px
+    flex: 0 0 266px; // Fixed width of 275px
     max-width: 275px;
     height: 400px;
     margin: 0; // Remove individual margins since we're using gap
     
+
+
     // Responsive adjustments
     @media (max-width: 1200px) { 
       // 3 cards per row
