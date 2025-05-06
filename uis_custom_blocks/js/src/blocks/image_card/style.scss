@@ -10,6 +10,7 @@
   flex-direction: column;
   margin: 0;
   position: relative;
+  border-radius: 10px;
   
   &:hover {
     transform: scale(0.90);
@@ -43,15 +44,14 @@
 }
 
 .uis-image-card-image-wrapper {
-    width: inherit;
-    height: inherit;
-    border-radius: 10px;
+    width: 275px;
+    height: 400px;
     display: block;
     unicode-bidi: isolate;
+    object-fit: cover;
 img{
     width: inherit;
     height: inherit;
-    border-radius: 10px;
     object-fit: cover;
     border: 0;
     overflow-clip-margin: content-box;
@@ -67,5 +67,10 @@ img{
     height: 100%;
     z-index: 1;
     position: absolute;
-    background-color: transparent;
+    background-color: transparent;    
+
+}
+
+a.uis-image-card-link{
+    text-decoration: none;
 }
