@@ -47,7 +47,15 @@ export default function Edit({ attributes, setAttributes }) {
                     </Button>
                   ) : (
                     <div className="uis-image-card-image-preview">
-                      <img src={imageUrl} alt={title || ''} />
+                      <img 
+                      
+                      src={imageUrl} alt={title || ''} 
+                         width='275'
+                         height='400'
+                         style= {{objectFit : 'cover'}}
+                      
+                      
+                      />
                       <Button 
                         onClick={open}
                         className="uis-image-card-change-image-button"

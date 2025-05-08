@@ -5,13 +5,16 @@ export default function save({ attributes }) {
   const blockProps = useBlockProps.save();
   
   const cardContent = (
-    <div className="uis-image-card-container">
+    <div>
       {imageUrl && (
         <div className="uis-image-card-image-wrapper">
           <img 
             src={imageUrl} 
             alt={title || ''} 
             className="uis-image-card-image"
+            width='275'
+            height='400'
+            style= {{objectFit : 'cover'}}
           />
         </div>
       )}
@@ -19,7 +22,7 @@ export default function save({ attributes }) {
       {title && (
         <div className="uis-image-card-content">
           <RichText.Content 
-            tagName="h3" 
+            tagName="p" 
             value={title} 
             className="uis-image-card-title"
           />

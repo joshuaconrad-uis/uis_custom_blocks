@@ -1,79 +1,76 @@
 .wp-block-uis-custom-blocks-uis-image-card {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    box-shadow : 5px 5px 30px 7px rgba(0, 0, 0, 0.25),
+    -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
   overflow: hidden;
   border-radius: 3px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 275px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  width: 266px;
   height: 400px;
   display: flex;
   flex-direction: column;
   margin: 0;
   position: relative;
+  border-radius: 10px;
   
   &:hover {
     transform: scale(0.90);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
   }
 
-  .uis-image-card-container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+.uis-image-card-title{
+    text-align: center;
+    border-radius: 0px 0px 40px 40px;
+    font-family: sans-serif;
+    font-size: 20px;
+    margin-top: -100px;
+    height: 40px;
+    z-index: 1;
     position: relative;
-  }
+    color: white !important;
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        unicode-bidi: isolate;
+        font-weight: 900;
+        line-height: 1.2em;
+        text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.2), 1px 1px 1px rgba(0, 0, 0, 0.6);
+        text-decoration: none;
 
-  .uis-image-card-image-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
+   .p{
+        text-decoration : none;
+    }
+}
+
+.uis-image-card-image-wrapper {
+    width: 275px;
+    height: 400px;
+    display: block;
+    unicode-bidi: isolate;
+    object-fit: cover;
+img{
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+    border: 0;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+}
+
+}
+
+.uis-image-card-link{
     width: 100%;
     height: 100%;
     z-index: 1;
-  }
-
-  // Image styles to cover the entire card
-  .uis-image-card-image, 
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-  }
-  
-  // Content positioning - now overlaid on the image
-  .uis-image-card-content {
     position: absolute;
-    bottom: 20px;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    padding: 16px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    z-index: 2;
-    border-radius: 3px;
-  }
+    background-color: transparent;    
 
-  .uis-image-card-link {
+}
+
+a.uis-image-card-link{
     text-decoration: none;
-    color: inherit;
-    display: block;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 3;
-  }
-
-  // Title styling
-  .uis-image-card-title {
-    margin: 0;
-    font-size: 18px;
-    line-height: 1.4;
-    color: #ffffff;
-    font-weight: 500;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-  }
 }
