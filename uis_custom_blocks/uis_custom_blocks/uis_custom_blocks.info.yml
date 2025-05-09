@@ -1,9 +1,0 @@
-#Will need to leave alone for the most part, in case of updates will need to update the core requirements
-
-name: 'UIS Custom Blocks'
-type: module
-description: 'Provides custom Gutenberg blocks using React.'
-core_version_requirement: ^10
-package: Custom
-dependencies:
-  - gutenberg:gutenberg
