@@ -1,0 +1,27 @@
+.uis-image-card-container {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 20px;
+    width: 100%;
+    min-height: 250px;
+  
+
+    .block-editor-inner-blocks {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .wp-block-uis-custom-blocks-uis-image-card {
+      flex: 0 0 266px;
+      margin: 0;
+    }
+  
+    
+    .block-editor-button-block-appender {
+      margin: 10px 0;
+    }
+  }

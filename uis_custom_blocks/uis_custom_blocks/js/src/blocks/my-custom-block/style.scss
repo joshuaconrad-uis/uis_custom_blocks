@@ -1,0 +1,22 @@
+/**
+ * Frontend styles for My Custom Block.
+ * 
+ * This SCSS file contains styles that apply to the block on the frontend.
+ * These styles match the editor styles but use the block's frontend class name.
+ * 
+ * Key styles:
+ * - Red background with padding
+ * - Centered white text
+ * - Uses .wp-block-uis-custom-blocks-my-custom-block class namespace
+ */
+
+
+.wp-block-uis-custom-blocks-my-custom-block{
+    background-color: red;
+    padding: 20px;
+}
+
+.wp-block-uis-custom-blocks-my-custom-block .content{
+    text-align: center;
+    color: white;
+}

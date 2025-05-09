@@ -1,0 +1,162 @@
+// Editor-specific styles for UIS Card
+.editor-styles-wrapper {
+  // Style for individual cards in the editor
+  .editor-styles-uis-card {
+    // Make cards display inline-block to simulate a grid layout
+    display: inline-block;
+    width: 275px;
+    height: 225px;
+    margin: 10px;
+    vertical-align: top;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    
+    .advanced-card {
+      height: 100%;
+      background-color: #ffffff;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .advanced-card-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      height: 100%;
+    }
+
+    .advanced-card__header {
+      color: black;
+      padding: 8px 12px;
+      text-align: center;
+      margin: 0;
+      background-color: #f8f8f8;
+      border-bottom: 1px solid #eee;
+    }
+
+    .advanced-card__header-text {
+      font-weight: 500;
+      font-size: 12px;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 0;
+    }
+
+    .advanced-card__title-container {
+      padding: 12px 15px 8px;
+    }
+
+    .advanced-card__title {
+      font-size: 20px;
+      text-align: center;
+      margin: 0;
+      color: #333;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .advanced-card__content {
+      text-align: center;
+      font-size: 16px;
+      color: #444;
+      padding: 10px 15px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .advanced-card__link-control {
+      padding: 10px;
+      background-color: #f8f8f8;
+      border-top: 1px solid #eee;
+    }
+  }
+}
+
+// Target the block list to create a flex container for cards
+.block-editor-block-list__layout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  
+  // Only apply to direct children that are card blocks
+  > [data-type="uis-custom-blocks/uis-card"] {
+    flex: 0 0 auto;
+    width: 275px;
+    margin: 10px;
+  }
+}
+
+// Styles for the block in the block inserter/selector
+.block-editor-block-types-list__item {
+  .wp-block-uis-custom-blocks-uis-card {
+    .block-editor-block-types-list__item-icon {
+      background-color: #f8f8f8;
+      border-radius: 4px;
+      padding: 8px;
+      
+      &::before {
+        content: "Card";
+        font-size: 10px;
+        color: #ffffff;
+      }
+    }
+  }
+  
+  .wp-block-uis-custom-blocks-uis-card-grid {
+    .block-editor-block-types-list__item-icon {
+      background-color: #f8f8f8;
+      border-radius: 4px;
+      padding: 8px;
+      
+      &::before {
+        content: "Grid";
+        font-size: 10px;
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+// Responsive preview in editor
+.is-tablet-preview,
+.is-mobile-preview {
+  .editor-styles-uis-card {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+// Selected state highlighting
+.is-selected {
+  .editor-styles-uis-card {
+    border: 1px solid #007cba;
+    box-shadow: 0 0 0 1px #007cba;
+    
+    &::before {
+      background-color: #007cba;
+      color: white;
+    }
+  }
+}
+
+// Media queries for responsive grid
+@media (max-width: 768px) {
+  .editor-styles-wrapper {
+    .wp-block-uis-custom-blocks-uis-card-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .editor-styles-wrapper {
+    .wp-block-uis-custom-blocks-uis-card-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
