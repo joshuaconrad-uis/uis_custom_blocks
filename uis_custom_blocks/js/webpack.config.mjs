@@ -27,4 +27,28 @@ export default {
       filename: 'style-[name].css',
     }),
   ],
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+        },
+        ckeditor: {
+          test: /[\\/]node_modules[\\/]@ckeditor/,
+          name: 'ckeditor',
+          chunks: 'all',
+          priority: 10,
+          enforce: true,
+        },
+      },
+    },
+  },
+  performance: {
+    hints: false, // Disable size warnings temporarily
+    maxEntrypointSize: 1024000, // Increase size limit
+    maxAssetSize: 1024000,
+  },
 };

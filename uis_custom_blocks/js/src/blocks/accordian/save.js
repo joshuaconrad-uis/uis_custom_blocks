@@ -1,7 +1,7 @@
 import { useBlockProps, RichText } from '@wordpress/block-editor';
 
 export default function Save({ attributes }) {
-  const { title, content } = attributes;
+  const { title, content, imageUrl, imageAlt } = attributes;
   const blockProps = useBlockProps.save();
 
   return (
@@ -20,6 +20,17 @@ export default function Save({ attributes }) {
             className="uis-accordion__paragraph"
             dangerouslySetInnerHTML={{ __html: content || '' }}
           />
+          
+          {/* Display Image if exists */}
+          {imageUrl && (
+            <div className="uis-accordion__image-section">
+              <img 
+                src={imageUrl} 
+                alt={imageAlt || 'Accordion image'} 
+                className="uis-accordion__image"
+              />
+            </div>
+          )}
         </div>
       </details>
     </div>

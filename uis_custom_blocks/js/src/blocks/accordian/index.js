@@ -16,6 +16,14 @@ registerBlockType('uis-custom-blocks/accordian', {
       type: 'string',
       default: '',
     },
+    imageUrl: {
+      type: 'string',
+      default: '',
+    },
+    imageAlt: {
+      type: 'string',
+      default: '',
+    },
   },
   edit,
   save,
