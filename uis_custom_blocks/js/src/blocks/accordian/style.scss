@@ -1,0 +1,68 @@
+.uis-accordion {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin: 1rem 0;
+  background: #fff;
+
+  // Remove default details styling
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  &[open] {
+    .uis-accordion__title {
+      color: #007cba;
+    }
+    
+    .uis-accordion__toggle {
+      transform: rotate(45deg);
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    cursor: pointer;
+    background: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.2s ease;
+    list-style: none; // Remove default summary styling
+
+    &:hover {
+      background: #e9ecef;
+    }
+
+    &:focus {
+      outline: 2px solid #007cba;
+      outline-offset: -2px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    flex: 1;
+    color: #6c757d;
+    transition: color 0.2s ease;
+  }
+
+  &__toggle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #6c757d;
+    margin-left: 1rem;
+    transition: transform 0.2s ease;
+  }
+
+  &__content {
+    padding: 1rem;
+  }
+
+  &__paragraph {
+    line-height: 1.6;
+    color: #333;
+  }
+}
