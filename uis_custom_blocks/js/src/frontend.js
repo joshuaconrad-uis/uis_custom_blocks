@@ -5,6 +5,7 @@ import './blocks/containers/uis-card-container/style.scss'
 import './blocks/image_card/style.scss'
 import './blocks/containers/image-card-containter/style.scss'
 import './blocks/accordian/style.scss'
+import './blocks/advanced-accordian/style.scss'
 
 //console.log('Style index loaded');
 // Add other block style imports as needed

@@ -1,11 +1,9 @@
-// Import Quill styles at the top of your SCSS file
-@import '~react-quill/dist/quill.snow.css';
-
 .uis-accordion {
   border: 1px solid #ddd;
   border-radius: 4px;
   margin: 1rem 0;
   background: #fff;
+  width: 100rem;
 
   &__header {
     display: flex;
