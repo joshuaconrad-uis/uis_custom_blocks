@@ -1,104 +1,223 @@
-.uis-accordion {
-    /* Always span the full editable width in the editor */
-    display: block;
-    width: 100rem;
-    box-sizing: border-box;
+// More specific wrapper to override Drupal styles
+.block-editor-block-list__layout .uis-accordion,
+.wp-block .uis-accordion {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 
-  
-  
-    max-width: 100%;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  
-    
-    &__header {
-      width: 100%;
-      box-sizing: border-box;
-      list-style: none;
+  &__header {
+    width: 100%;
+    box-sizing: border-box;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    cursor: pointer;
+    background: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.2s ease;
+    position: relative;
+
+    &:hover {
+      background: #e9ecef;
     }
-  
-    
-    &__title {
-      min-height: 1.25rem;
-      line-height: 1.25;
-      word-break: break-word;
-    }
-  
-    /* Content container should be a predictable stack */
-    &__content {
-      width: 100%;
-      box-sizing: border-box;
-    }
-  
-    /* Normalize spacing between inner blocks to avoid “messy” stacking */
-    &__content .block-editor-inner-blocks .block-editor-block-list__layout {
-      /* Create a consistent gap between child blocks */
-      display: grid;
-      gap: 0.75rem;
-  
-      /* Remove stray top/bottom margins from first/last block */
-      > *:first-child { margin-top: 0 !important; }
-      > *:last-child { margin-bottom: 0 !important; }
-  
-      /* Ensure nested groups/columns don’t leak margins */
-      > .wp-block-group,
-      > .wp-block-columns,
-      > .wp-block-cover,
-      > .wp-block-media-text {
-        margin-top: 0 !important;
-        margin-bottom: 0 !important;
-      }
-    }
-  
-    /* Make the appender look intentional and aligned with content width */
-    .block-editor-button-block-appender,
-    .block-list-appender {
-      margin: 0.5rem 0 0 0;
-      width: 100%;
-    }
-  
-    /* Support core alignment classes inside the accordion */
-    &__content .alignwide {
-      max-width: var(--wp--style--global--content-size, 1200px);
-      margin-left: auto;
-      margin-right: auto;
-    }
-  
-    &__content .alignfull {
-      width: 100vw;
-      max-width: 100vw;
-      margin-left: calc(50% - 50vw);
-      margin-right: calc(50% - 50vw);
-    }
-  
-    /* Prevent nested accordions or complex blocks from breaking layout */
-    &__content .uis-accordion {
-      width: 100%;
-      max-width: 100%;
-    }
-  
-    /* Keep media responsive in the editor preview */
-    &__content img,
-    &__content video,
-    &__content iframe {
-      max-width: 100%;
-      height: auto;
-    }
-  
-    /* Avoid collapsed margins between summary and first content block */
-    &__header { margin-bottom: 0; }
-    &__content { padding-top: 1rem; }
-  
-    /* Ensure the details element itself behaves like a full-width container */
-    &__details,
-    details.uis-accordion {
-      display: block;
-      width: 100%;
-    }
-  
-    /* Make sure the marker isn’t shown in editor */
-    &::-webkit-details-marker { display: none; }
   }
 
+  &__title {
+    min-height: 1.25rem;
+    line-height: 1.25;
+    word-break: break-word;
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    flex: 1;
+    padding-right: 2rem;
+  }
+
+  &__toggle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #6c757d;
+    transition: transform 0.2s ease;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    user-select: none;
+    z-index: 1;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .is-open & { 
+      transform: translateY(-50%) rotate(180deg); 
+    }
+  }
+
+  &__content {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+    border-top: 1px solid #ddd;
+    position: relative;
+    z-index: 1;
+    background: #fdfdfd;
+  }
+
+  // InnerBlocks styling
+  &__content .block-editor-inner-blocks {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+  }
+
+  &__content .block-editor-inner-blocks .block-editor-block-list__layout {
+    display: grid;
+    gap: 0.75rem;
+    width: 100%;
+
+    > *:first-child {
+      margin-top: 0 !important;
+    }
+
+    > *:last-child {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  // Block inserter fixes - CRITICAL
+  &__content .block-editor-button-block-appender,
+  &__content .block-list-appender {
+    position: relative !important;
+    z-index: 1 !important;
+    pointer-events: auto !important;
+    margin: 0.5rem 0 0 0 !important;
+    width: 100% !important;
+    display: block !important;
+    left: 0 !important;
+    right: 0 !important;
+  }
+
+  // Placeholder text fixes - CRITICAL
+  &__content [data-rich-text-placeholder] {
+    position: relative !important;
+    z-index: 1 !important;
+    pointer-events: auto !important;
+    user-select: auto !important;
+    -webkit-user-select: auto !important;
+    -moz-user-select: auto !important;
+    -ms-user-select: auto !important;
+    display: block !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  // Support core alignment classes
+  &__content .alignwide {
+    max-width: var(--wp--style--global--content-size, 1200px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__content .alignfull {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+  }
+
+  &__content .uis-accordion {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  &__content img,
+  &__content video,
+  &__content iframe {
+    max-width: 100%;
+    height: auto;
+  }
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+}
+
+// AGGRESSIVE FIXES FOR FOCUSED STATE
+.block-editor-block-list__layout .uis-accordion.is-selected,
+.block-editor-block-list__layout .uis-accordion.is-focused,
+.block-editor-block-list__layout .uis-accordion.has-child-selected,
+.wp-block .uis-accordion.is-selected,
+.wp-block .uis-accordion.is-focused,
+.wp-block .uis-accordion.has-child-selected {
   
+  &__content {
+    position: relative !important;
+    z-index: auto !important;
+    
+    // Force block inserter to work properly when focused
+    .block-editor-button-block-appender,
+    .block-list-appender {
+      position: relative !important;
+      z-index: auto !important;
+      pointer-events: auto !important;
+      margin: 0.5rem 0 0 0 !important;
+      width: 100% !important;
+      display: block !important;
+    }
+    
+    // Force placeholder text to work properly when focused
+    [data-rich-text-placeholder] {
+      position: relative !important;
+      z-index: auto !important;
+      pointer-events: auto !important;
+      user-select: auto !important;
+      -webkit-user-select: auto !important;
+      -moz-user-select: auto !important;
+      -ms-user-select: auto !important;
+      display: block !important;
+    }
+    
+    // Force inner blocks to work properly when focused
+    .block-editor-inner-blocks {
+      position: relative !important;
+      z-index: auto !important;
+    }
+    
+    .block-editor-inner-blocks .block-editor-block-list__layout {
+      position: relative !important;
+      z-index: auto !important;
+    }
+  }
   
+  &__toggle {
+    position: absolute !important;
+    right: 1rem !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    pointer-events: none !important;
+    user-select: none !important;
+    z-index: 1 !important;
+  }
+  
+  &__title {
+    padding-right: 2rem !important;
+  }
+}
+
+// Define consistent positioning variables
+:root {
+  --accordion-toggle-size: 1.5rem;
+  --accordion-toggle-right: 1rem;
+  --accordion-title-padding: 2rem;
+}
+

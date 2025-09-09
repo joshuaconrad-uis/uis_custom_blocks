@@ -77,14 +77,16 @@
   }
 }
 
-// Target the block list to create a flex container for cards
-.block-editor-block-list__layout {
+// Target only card container blocks, not the entire block list
+.wp-block[data-type="uis-custom-blocks/uis-card-container"] .block-editor-block-list__layout,
+.wp-block[data-type="uis-custom-blocks/image-card-containter"] .block-editor-block-list__layout {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
   
   // Only apply to direct children that are card blocks
-  > [data-type="uis-custom-blocks/uis-card"] {
+  > [data-type="uis-custom-blocks/uis-card"],
+  > [data-type="uis-custom-blocks/uis-image-card"] {
     flex: 0 0 auto;
     width: 275px;
     margin: 10px;

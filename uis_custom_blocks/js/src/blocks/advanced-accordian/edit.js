@@ -23,7 +23,7 @@ export default function Edit({ attributes, setAttributes }) {
             allowedFormats={['core/bold', 'core/italic']}
           />
           <span className="uis-accordion__toggle">
-            {isOpen ? '−' : '+'}
+            {isOpen ? '-' : '+'}
           </span>
         </div>
 
