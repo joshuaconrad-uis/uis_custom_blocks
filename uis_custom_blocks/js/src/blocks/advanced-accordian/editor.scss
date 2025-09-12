@@ -52,9 +52,11 @@
     z-index: 1;
     width: 1.5rem;
     height: 1.5rem;
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: center;
+    opacity: 1 !important;
+    visibility: visible !important;
 
     .is-open & { 
       transform: translateY(-50%) rotate(180deg); 
@@ -212,6 +214,29 @@
   &__title {
     padding-right: 2rem !important;
   }
+}
+
+// Force toggle visibility regardless of focus state
+.block-editor-block-list__layout .uis-accordion .uis-accordion__toggle,
+.wp-block .uis-accordion .uis-accordion__toggle {
+  display: flex !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  position: absolute !important;
+  right: 1rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  user-select: none !important;
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 1.5rem !important;
+  font-weight: bold !important;
+  color: #6c757d !important;
+  transition: transform 0.2s ease !important;
 }
 
 // Define consistent positioning variables
