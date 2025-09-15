@@ -4,9 +4,9 @@
   display: block;
   width: 100%;
   box-sizing: border-box;
-  max-width: 100%;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+  max-width: var(--wp--style--global--content-size, 1200px);
+  margin-left: auto !important;
+  margin-right: auto !important;
 
   &__header {
     width: 100%;

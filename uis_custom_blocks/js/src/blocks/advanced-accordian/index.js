@@ -12,10 +12,10 @@ registerBlockType('uis-custom-blocks/advanced-accordian', {
       type: 'string',
       default: '',
     },
-  },
-  supports: {
-    html: false,
-    align: ['wide', 'full'],
+    align: {
+      type: 'string',
+      default: 'wide',
+    },
   },
   edit,
   save,

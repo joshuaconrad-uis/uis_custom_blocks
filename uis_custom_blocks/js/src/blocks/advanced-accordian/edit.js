@@ -3,8 +3,10 @@ import { __ } from '@wordpress/i18n';
 import { useState } from '@wordpress/element';
 
 export default function Edit({ attributes, setAttributes }) {
-  const { title } = attributes;
-  const blockProps = useBlockProps();
+  const { title, align } = attributes;
+  const blockProps = useBlockProps({
+    className: align ? `align${align}` : 'alignwide',
+  });
   const [isOpen, setIsOpen] = useState(false);
 
   return (

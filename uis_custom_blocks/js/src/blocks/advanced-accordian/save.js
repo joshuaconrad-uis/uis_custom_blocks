@@ -1,8 +1,10 @@
 import { useBlockProps, RichText, InnerBlocks } from '@wordpress/block-editor';
 
 export default function Save({ attributes }) {
-  const { title } = attributes;
-  const blockProps = useBlockProps.save();
+  const { title, align } = attributes;
+  const blockProps = useBlockProps.save({
+    className: align ? `align${align}` : 'alignwide',
+  });
 
   return (
     <div {...blockProps}>
