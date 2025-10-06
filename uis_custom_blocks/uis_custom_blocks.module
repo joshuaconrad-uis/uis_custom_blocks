@@ -65,25 +65,16 @@ function uis_custom_blocks_gutenberg_blocks() {
     ],
     'category' => 'common',
   ],
-
-// Registration for accordian block
-  'uis-custom-blocks/accordian' => [
-    'attributes' => [
-      'title' => [
-        'type' => 'string',
-      ],
-      'content' => [
-        'type' => 'string',
-      ],
-      'imageUrl' => [
-        'type' => 'string',
-      ],
-      'isOpen' => [
-        'type' => 'boolean'
-      ],
+  
+// Advanced accordion (container) registration
+'uis-custom-blocks/advanced-accordian' => [
+  'attributes' => [
+    'title' => [
+      'type' => 'string',
     ],
-    'category' => 'common',
   ],
+  'category' => 'common',
+],
 
 
 
