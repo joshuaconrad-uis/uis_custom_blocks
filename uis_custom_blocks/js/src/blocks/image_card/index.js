@@ -5,9 +5,12 @@ import save from './save.js';
 
 registerBlockType('uis-custom-blocks/uis-image-card', {
 
-    title: __('UIS Image Card'),
+    title: __('Depracated UIS Image Card'),
     icon: 'dashicons-cover-image',
     category: 'common',
+    supports: {
+        inserter: false, // Hide from block inserter
+    },
     attributes: {
         linkUrl: {
             type: 'string',

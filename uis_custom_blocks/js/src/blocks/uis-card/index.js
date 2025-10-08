@@ -6,9 +6,12 @@ import save from './save.js';
 registerBlockType('uis-custom-blocks/uis-card', 
   
   {
-  title: __('UIScard'),
-  icon: 'format-aside', // WordPress dashicon for a card/document
+  title: __('Deprecated UIS Card'),
+  icon: 'dashicons-cover-image', // WordPress dashicon for a card/document
   category: 'common',  // Make sure this matches the category in PHP
+  supports: {
+    inserter: false, // Hide from block inserter
+  },
   attributes: {
     headerText: {
       type: 'string',

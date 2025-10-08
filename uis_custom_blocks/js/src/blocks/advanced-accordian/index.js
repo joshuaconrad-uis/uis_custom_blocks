@@ -4,7 +4,7 @@ import edit from './edit.js';
 import save from './save.js';
 
 registerBlockType('uis-custom-blocks/advanced-accordian', {
-  title: __('UIS Advanced Accordion'),
+  title: __('Accordion'),
   icon: 'editor-expand',
   category: 'common',
   attributes: {

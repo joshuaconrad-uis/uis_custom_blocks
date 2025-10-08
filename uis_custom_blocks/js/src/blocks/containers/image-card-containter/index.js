@@ -3,7 +3,7 @@ import { __ } from '@wordpress/i18n';
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 registerBlockType('uis-custom-blocks/image-card-container', {
-  title: __('Image Card Container'),
+  title: __('UIS Image Card'),
   icon: 'grid-view',
   category: 'common',
   
